@@ -78,26 +78,26 @@ USP – unique sellingpoints или ключевые особенности иг
 \subsection{Платформа}
 
 \begin{center}
-    \begin{tabular}{p{4cm}|p{4cm}|p{6cm}}
+    \begin{tabular}{|p{4cm}|p{4cm}|p{6cm}|}
     \hline
-      Требования   & Минимальные  & Рекомендуемые  \\
+      \textit{\textbf {Требования}}   & \textit{\textbf {Минимальные}}  & \textit{\textbf {Рекомендуемые}}  \\
       [0.5ex]
-      \hline \hline
-        Операционная система & ОС Windows 7 (64-bit) & ОС Windows 11 (64-bit)\\
+      \hline 
+        \textit{\textbf {Операционная система}} & ОС Windows 7 (64-bit) & ОС Windows 11 (64-bit)\\
         \hline 
-         Процессор & Intel Core 2 Duo & Intel Core i3 или лучше\\
+         \textit{\textbf {Процессор}} & Intel Core 2 Duo & Intel Core i3 или лучше\\
          \hline
-         ОЗУ & 2 ГБ & 4 ГБ\\
+         \textit{\textbf {ОЗУ}} & 2 ГБ & 4 ГБ\\
          \hline
-         Свободное место на HDD & 1 ГБ& 1 ГБ\\
+         \textit{\textbf {Свободное место на HDD}} & 1 ГБ& 1 ГБ\\
          \hline
-         Видео карта & Встроенная видеокарта с поддержкой DirectX 9 & видеокарта с поддержкой DirectX 11 или выше\\
+         \textit{\textbf {Видео карта}} & Встроенная видеокарта с поддержкой DirectX 9 & видеокарта с поддержкой DirectX 11 или выше\\
          \hline
-         Звуковая карта & Любая совместимая с Windiws & Любая совместимая с Windiws\\
+         \textit{\textbf {Звуковая карта}} & Любая совместимая с Windiws & Любая совместимая с Windiws\\
          \hline
-         Управление & Клавиатура или геймпад & Клавиатура и мышь/трекпад\\ 
+         \textit{\textbf {Управление}} & Клавиатура или геймпад & Клавиатура и мышь/трекпад\\ 
          \hline  
-         Unity & Версия Unity 6 (6000.0.23f1) &Версия Unity 6 (6000.0.23f1)\\ [1ex]
+         \textit{\textbf {Unity}} & Версия Unity 6 (6000.0.23f1) &Версия Unity 6 (6000.0.23f1)\\ [1ex]
          \hline  
     \end{tabular}
 \end{center}
