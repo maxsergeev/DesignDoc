@@ -5,6 +5,10 @@
 \usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{hyperref}
+\usepackage{tikz}  
+\usetikzlibrary{graphs}
+\usetikzlibrary {arrows.meta}
+\usetikzlibrary{bending}
 
 \renewcommand{\contentsname}{}
 
@@ -243,7 +247,6 @@ USP – unique sellingpoints или ключевые особенности иг
     \item \textbf{Изображение:}  
     \includegraphics[width=0.4\textwidth]{ground.png}  
 \end{itemize}
-
 \subsection{«Искусственный интеллект»}
 
  В данный момент игра не использует никаких возможностей или элементов AI. По мере её развития, в последующих версиях мы можем использовать искусственный интелект для создания новых уровней и NPC, на основе уже имеющихся. Это позволит расширить игру и сделать ее более захватывающей и интересной.
@@ -255,6 +258,56 @@ USP – unique sellingpoints или ключевые особенности иг
 \subsection{Интерфейс пользователя}
 
 \subsubsection{Блок-схема}
+\tikz {
+  \begin{scope}[name prefix = top-]
+    \node [draw=black] (Нажать "Play") at (0,1) {Нажать "Play"};
+    \node [draw=black] (Регулировка громкости) at (7,1) {Регулировка громкости};
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Нажать "Play") -- (Регулировка громкости);
+    [name prefix = bottom-]
+    \node [draw=black](Выбрать уровень) at (0,-1) {Выбрать уровень};
+    \node [draw=black](Вернуться домой) at (7,-1) {Вернуться домой};
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Выбрать уровень) -- (Вернуться домой);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Нажать "Play") -- (Выбрать уровень);
+    [name prefix = bottom-]
+    \node [draw=black](1 уровень) at (-3,-2) {1 уровень};
+    \node [draw=black](2 уровень) at (-1,-2) {2 уровень};
+    \node [draw=black](3 уровень) at (1,-2) {3 уровень};
+    \node [draw=black](4 уровень) at (3,-2) {4 уровень};
+    \node [draw=black](5 уровень) at (5,-2) {5 уровень};
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Выбрать уровень) -- (1 уровень);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Выбрать уровень) -- (2 уровень);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Выбрать уровень) -- (3 уровень);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Выбрать уровень) -- (4 уровень);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Выбрать уровень) -- (5 уровень);
+    \node (Уровень пройден?) at (1,-4) {Уровень пройден?};
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (1 уровень) -- (Уровень пройден?);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (2 уровень) -- (Уровень пройден?);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (3 уровень) -- (Уровень пройден?);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (4 уровень) -- (Уровень пройден?);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (5 уровень) -- (Уровень пройден?);
+    [name prefix = bottom-]
+    \node [draw=black](Перейти к следующему уровню) at (-4,-5) {Перейти к следующему уровню};
+    \node [draw=black](Начать заново) at (-4,-7) {Начать заново};
+    \node [draw=black](Вернуться к выбору уровня) at (-2,-8) {Вернуться к выбору уровня};
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Уровень пройден?) -- node[above=0mm] {Да}(Перейти к следующему уровню);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Уровень пройден?) -- node[below=3mm] {Да}(Вернуться к выбору уровня);
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Уровень пройден?) -- node[below=2mm] {Да}(Начать заново);
+    [name prefix = bottom-]
+    \node [draw=black](Начать заново) at (5,-6) {Начать заново};
+    \node [draw=black](Вернуться к выбору уровня) at (4,-7) {Вернуться к выбору уровня};
+    \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Уровень пройден?) -- node[above=2mm] {Нет}(Начать заново);
+     \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Уровень пройден?) -- node[below=3mm] {Нет}(Вернуться к выбору уровня);
+     \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Вернуться домой) -- (Нажать "Play");
+     \end{scope}
+     
+  \begin{scope}[name prefix = top-]
+   \node [draw=black](Нажать "Escape") at (0,-10.5) {Нажать "Escape"};
+   [name prefix = bottom-]
+   \node [draw=black](Начать заново) at (-3,-12) {Начать заново};
+   \node [draw=black](Вернуться к выбору уровня) at (4,-12) {Вернуться к выбору уровня};
+   \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Нажать "Escape") -- (Начать заново);
+   \draw [line width=1pt, double distance=2pt, arrows = {-Latex[length=1pt 2 0]}] (Нажать "Escape") -- (Вернуться к выбору уровня);
+  \end{scope} }
 
 \subsubsection{Функциональное описание и управление}
 
